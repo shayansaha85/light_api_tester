@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getapi</title>
+    <style>
+        .maincontainer, body {
+            margin: 50px;
+            padding-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <div class="maincontaner">
+
+        <form action="" method="post">
+            <label for="endpoint">Endpoint</label><br>
+            <input type="url" name="endpoint" id="endpoint" required style="width: 950px">
+    
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="http_method">HTTP Method</label>
+            <select name="http_method" id="http_method">
+                <option value="" selected>Choose...</option>
+                <option value="get">GET</option>
+                <option value="post">POST</option>
+            </select>
+            <br><br>
+            <label for="payload">Payload</label><br>
+            <textarea name="payload" id="payload" cols="30" rows="10" style="width: 1172px; height: 292px;" >
+            </textarea>
+            <br><br>
+                <button type="submit">Send Request</button>
+            <br><br>
+        </form>
+
+        <label for="reponse">Reponse</label><br>
+        <textarea name="response" id="response" cols="30" rows="10" style="width: 1172px; height: 292px;" disabled>
+        {% if response|length != 0 %}
+        {{ response }}
+        {% endif %}
+        </textarea>
+        
+    </div>
+</body>
+</html>
