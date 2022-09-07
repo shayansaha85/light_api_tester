@@ -4,44 +4,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getapi</title>
+    <title>LiteAPI</title>
     <style>
         .maincontainer, body {
-            margin: 50px;
-            padding-left: 100px;
+            padding-right : 300px;
+            padding-left : 300px;
         }
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        #response_text {
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        .response {
+            background-color: rgb(247, 247, 247);
+            border-width: 10px;
+            padding: 20px;
+            width: 1150px;
+            border-radius: 10px;
+        }
+
+        label {
+            font-family: Helvetica;
+        }
+
+        #liteapi_heading {
+            color: rgb(48, 59, 95);
+            
+        }
+
+        i {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px;
+        }
+        
+        span{
+           font-size: 15px;
+        }
+
     </style>
 </head>
 <body>
+    <h1 id="liteapi_heading"><i>Liteapi</i></h1>
+    <hr>
     <br><br>
     <div class="maincontaner">
 
         <form action="" method="post">
-            <label for="endpoint">Endpoint</label><br>
-            <input type="url" name="endpoint" id="endpoint" required style="width: 950px">
-    
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="http_method">HTTP Method</label>
-            <select name="http_method" id="http_method">
-                <option value="" selected>Choose...</option>
+            <label for="endpoint">Endpoint</label>&nbsp;&nbsp;<span>&#128071;</span><br><br>
+
+            <input type="url" name="endpoint" id="endpoint" required style="width: 950px" required>
+            <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="http_method">HTTP Method</label> -->
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="http_method" id="http_method" style="width: 180px;" required>
+                <option value="" selected id="selected_option">HTTP Method...</option>
                 <option value="get">GET</option>
                 <option value="post">POST</option>
             </select>
             <br><br>
-            <label for="payload">Payload</label><br>
-            <textarea name="payload" id="payload" cols="30" rows="10" style="width: 1172px; height: 292px;" >
+            <label for="headers">Headers (Write in JSON)</label>&nbsp;&nbsp;<span>&#128071;</span><br><br>
+
+            <textarea name="headers" id="headers" cols="30" rows="10" style="width: 1172px; height: 150px;" >
+            </textarea>
+            <br><br>
+            <label for="payload">Payload (Write in JSON)</label>&nbsp;&nbsp;<span>&#128071;</span><br><br>
+
+            <textarea name="payload" id="payload" cols="30" rows="10" style="width: 1172px; height: 150px;" >
             </textarea>
             <br><br>
                 <button type="submit">Send Request</button>
             <br><br>
         </form>
 
-        <label for="reponse">Reponse</label><br>
-        <textarea name="response" id="response" cols="30" rows="10" style="width: 1172px; height: 292px;" disabled>
+        <label for="reponse">Reponse</label>&nbsp;&nbsp;<span>&#128071;</span><br><br>
+        <!-- <textarea name="response" id="response" cols="30" rows="10" style="width: 1172px; height: 200px;" disabled>
         {% if response|length != 0 %}
         {{ response }}
         {% endif %}
-        </textarea>
+        </textarea> -->
         
+        <div class="response">
+            <p id="response_text">
+            {% if response|length != 0 %}
+            <strong>{{ response_code }}</strong>
+            <br><br>
+            {{ response }}
+            {% endif %}
+            </p>
+        </div>
     </div>
 </body>
 </html>
