@@ -13,4 +13,4 @@ Screenshot of app
 -
 <br />
 
-![ alt text for screen readers](/images-for-readme/screenshot_liteapi.JPG "screenshot_liteapi.JPG")
+![ alt text for screen readers](/images-for-readme/screenshot_liteapi.JPG "API from https://reqres.in")
