@@ -14,3 +14,11 @@ Screenshot of app
 <br />
 
 ![ alt text for screen readers](/images-for-readme/screenshot_liteapi.JPG "Sample API source : https://reqres.in")
+
+<br />
+<br />
+
+Test
+-
+
+Click [here](https://liteapi22.herokuapp.com) to test
